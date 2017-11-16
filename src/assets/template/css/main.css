@@ -678,7 +678,7 @@ a:not([href]):not([tabindex]):hover {
    Video promo Style
    ========================================================================== */
 .video-promo {
-  background: url(../img/bg_2.jpg) fixed;
+  background: url(../img/vluchtelingen.jpg) fixed;
   background-position: cover;
   position: relative;
 }
@@ -716,7 +716,7 @@ a:not([href]):not([tabindex]):hover {
   height: 100%;
   top: 0px;
   left: 0px;
-  background: #4676fa;
+  background: red;
   opacity: 0.7;
   filter: alpha(opacity=70);
 }
@@ -1152,7 +1152,7 @@ footer {
   font-size: 14px;
   text-align: center;
   border-radius: 4px;
-  background-color: #4676fa;
+  background-color: black;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
