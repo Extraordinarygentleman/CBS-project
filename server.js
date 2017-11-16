@@ -3,7 +3,7 @@ const app = express();
 const path = require('path'):
 
 app.use(express_static(__dirname + '/dist'));
-app.listen(proces.env.PORT || 8080);
+app.listen(proces.env.PORT || 4200);
 
 
 //padlocatie
