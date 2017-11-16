@@ -32,6 +32,9 @@ console.log(event);
 
 isPlaying = false;
 audio = new Audio();
+audio1= new Audio();
+audio2= new Audio();
+audio3= new Audio();
 buttonText = "Play";
 
 
@@ -289,7 +292,10 @@ buttonText = "Play";
 
   			//lees json uit
           constructor(private http:Http) {
-          		this.audio.src = "../../../assets/template/video/UitlegEritrea.mp3";
+          		this.audio.src = "../../../assets/template/video/Uitleg Polen.mp3";
+          		this.audio1.src = "../../../assets/template/video/UItleg Afghanistan.mp3";
+          		this.audio2.src = "../../../assets/template/video/Uitleg Syrie.mp3";
+          		this.audio3.src = "../../../assets/template/video/UitlegEritrea.mp3";
                 this.http.get('/assets/dataverzoek.json')
                 //leest async json uit
                .subscribe(res => {
@@ -490,6 +496,9 @@ buttonText = "Play";
  {
  	console.log("olaaaskidee");
  	this.playAudio();
+ 	this.playAudio1();
+ 	this.playAudio2();
+ 	this.playAudio3();
  }
 
  playAudio()
@@ -511,5 +520,62 @@ buttonText = "Play";
 		this.buttonText = "Play";
 	}
 }
+ playAudio1()
+  { 
+	if(!this.isPlaying)
+	{  	
+		this.audio1.load();
+		this.audio1.play();
+		this.audio1.volume = 1;
+		this.isPlaying = true;
+		console.log("playing musiccc jaming");
+		this.buttonText = "Stop";
+	}
+	else
+	{
+		this.audio1.pause();
+		this.isPlaying = false;
+		console.log("why did you make me stop T_T");
+		this.buttonText = "Play";
+	}
+}
 
+ playAudio2()
+  { 
+	if(!this.isPlaying)
+	{  	
+		this.audio2.load();
+		this.audio2.play();
+		this.audio2.volume = 1;
+		this.isPlaying = true;
+		console.log("playing musiccc jaming");
+		this.buttonText = "Stop";
+	}
+	else
+	{
+		this.audio2.pause();
+		this.isPlaying = false;
+		console.log("why did you make me stop T_T");
+		this.buttonText = "Play";
+	}
+}
+ playAudio3()
+  { 
+	if(!this.isPlaying)
+	{  	
+		this.audio3.load();
+		this.audio3.play();
+		this.audio3.volume = 1;
+		this.isPlaying = true;
+		console.log("playing musiccc jaming");
+		this.buttonText = "Stop";
+	}
+	else
+	{
+		this.audio3.pause();
+		this.isPlaying = false;
+		console.log("why did you make me stop T_T");
+		this.buttonText = "Play";
+	}
+}
 }
