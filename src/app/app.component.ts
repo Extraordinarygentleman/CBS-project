@@ -21,11 +21,29 @@ class Country {
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
+  
+
 
 })
 
 
 export class AppComponent {
+  myEvent (event){
+console.log(event);
+
+  }
+
+
+
+playAudio()
+  { 
+let audio = new Audio();
+audio.src = "../../../assets/template/video/UitlegEritrea.mp3";
+audio.load();
+audio.play();
+}
+
+
   title = 'Vluchtelingen';
   countryArray: Array<Country> = [];
   jsonData;
@@ -476,6 +494,7 @@ export class AppComponent {
  onSelect()
  {
  	console.log("olaaaskidee");
+ 	this.playAudio();
  }
 
 }
