@@ -20,10 +20,7 @@ class Country {
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-  
-
-
+  styleUrls: ['./app.component.css']  
 })
 
 
@@ -33,17 +30,32 @@ console.log(event);
 
   }
 
+isPlaying = false;
+audio = new Audio();
+buttonText = "Play";
 
 
 playAudio()
   { 
-let audio = new Audio();
-audio.src = "../../../assets/template/video/UitlegEritrea.mp3";
-audio.load();
-audio.play();
+	if(!this.isPlaying)
+	{  	
+		this.audio.load();
+		this.audio.play();
+		this.audio.volume = 1;
+		this.isPlaying = true;
+		console.log("playing musiccc jaming");
+		this.buttonText = "Stop";
+	}
+	else
+	{
+		this.audio.pause();
+		this.isPlaying = false;
+		console.log("why did you make me stop T_T");
+		this.buttonText = "Play";
+	}
 }
 
-
+  
   title = 'Vluchtelingen';
   countryArray: Array<Country> = [];
   jsonData;
@@ -295,6 +307,7 @@ audio.play();
 
   			//lees json uit
           constructor(private http:Http) {
+          		this.audio.src = "../../../assets/template/video/UitlegEritrea.mp3";
                 this.http.get('/assets/dataverzoek.json')
                 //leest async json uit
                .subscribe(res => {
