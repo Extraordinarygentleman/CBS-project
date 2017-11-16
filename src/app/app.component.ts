@@ -35,25 +35,7 @@ audio = new Audio();
 buttonText = "Play";
 
 
-playAudio()
-  { 
-	if(!this.isPlaying)
-	{  	
-		this.audio.load();
-		this.audio.play();
-		this.audio.volume = 1;
-		this.isPlaying = true;
-		console.log("playing musiccc jaming");
-		this.buttonText = "Stop";
-	}
-	else
-	{
-		this.audio.pause();
-		this.isPlaying = false;
-		console.log("why did you make me stop T_T");
-		this.buttonText = "Play";
-	}
-}
+
 
   
   title = 'Vluchtelingen';
@@ -509,5 +491,25 @@ playAudio()
  	console.log("olaaaskidee");
  	this.playAudio();
  }
+
+ playAudio()
+  { 
+	if(!this.isPlaying)
+	{  	
+		this.audio.load();
+		this.audio.play();
+		this.audio.volume = 1;
+		this.isPlaying = true;
+		console.log("playing musiccc jaming");
+		this.buttonText = "Stop";
+	}
+	else
+	{
+		this.audio.pause();
+		this.isPlaying = false;
+		console.log("why did you make me stop T_T");
+		this.buttonText = "Play";
+	}
+}
 
 }
