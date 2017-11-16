@@ -270,6 +270,50 @@ buttonText = "Play";
   
   public lineChartLegendPolen:boolean = false;
   public lineChartTypePolen:string = 'line';
+
+    public lineChartDataSyrie:Array<any> = [
+  {data: [], label: ''},];
+
+  public lineChartLabelsSyrie:Array<any> = ['1975', '1976', '1977', '1978', '1979', '1980', '1981', '1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
+  public lineChartOptionsSyrie:any = {
+    responsive: true
+  };
+
+  public lineChartColorsSyrie:Array<any> = [
+    { // grey
+      backgroundColor: this.color5 +',0.2)',
+      borderColor: this.color5 + ',1)',
+      pointBackgroundColor: this.color5 + ',1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: this.color5 + ',0.8)'
+    },];
+  
+  public lineChartLegendSyrie:boolean = false;
+  public lineChartTypeSyrie:string = 'line';
+
+    public lineChartDataEritrea:Array<any> = [
+  {data: [], label: ''},];
+
+  public lineChartLabelsEritrea:Array<any> = ['1975', '1976', '1977', '1978', '1979', '1980', '1981', '1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
+  public lineChartOptionsEritrea:any = {
+    responsive: true
+  };
+
+  public lineChartColorsEritrea:Array<any> = [
+    { // grey
+      backgroundColor: this.color7 +',0.2)',
+      borderColor: this.color7 + ',1)',
+      pointBackgroundColor: this.color7 + ',1)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: this.color7 + ',0.8)'
+    },];
+  
+  public lineChartLegendEritrea:boolean = false;
+  public lineChartTypeEritrea:string = 'line';
+  
+
   public randomize():void {
     let _lineChartData:Array<any> = new Array(this.lineChartData.length);
     for (let i = 0; i < this.lineChartData.length; i++) {
@@ -344,8 +388,107 @@ buttonText = "Play";
                	let _lineChartData = [];
                	let _lineChartDataAfghanistan =[];
                	let _lineChartDataPolen =[];
+               	let _lineChartDataEritrea =[];
+               	let _lineChartDataSyrie =[];
+
                	for(let country of this.countryArray)
-               	{
+               	{ 
+
+               	if(country.name.toLowerCase() == "eritrees")
+               		{
+               			_lineChartDataEritrea.push({data:[
+               			country.values.get(1975) || 0,
+               			country.values.get(1976) || 0,
+               			country.values.get(1977) || 0,
+               			country.values.get(1978) || 0,
+               			country.values.get(1979) || 0,
+               			country.values.get(1980) || 0,
+               			country.values.get(1981) || 0,
+               			country.values.get(1982) || 0,
+               			country.values.get(1983) || 0,
+               			country.values.get(1984) || 0,
+               			country.values.get(1985) || 0,
+               			country.values.get(1986) || 0,
+               			country.values.get(1987) || 0,
+               			country.values.get(1988) || 0,
+               			country.values.get(1989) || 0,
+               			country.values.get(1990) || 0,
+               			country.values.get(1991) || 0,
+               			country.values.get(1992) || 0,
+               			country.values.get(1993) || 0,
+               			country.values.get(1994) || 0,
+               			country.values.get(1995) || 0,
+               			country.values.get(1996) || 0,
+               			country.values.get(1997) || 0,
+               			country.values.get(1998) || 0,
+               			country.values.get(1999) || 0,
+               			country.values.get(2000) || 0,
+               			country.values.get(2001) || 0,
+               			country.values.get(2002) || 0,
+               			country.values.get(2003) || 0,
+               			country.values.get(2004) || 0,
+               			country.values.get(2005) || 0,
+               			country.values.get(2006) || 0,
+               			country.values.get(2007) || 0,
+               			country.values.get(2008) || 0,
+               			country.values.get(2009) || 0,
+               			country.values.get(2010) || 0,
+               			country.values.get(2011) || 0,
+               			country.values.get(2012) || 0,
+               			country.values.get(2013) || 0,
+               			country.values.get(2014) || 0,
+               			country.values.get(2015) || 0,
+               			country.values.get(2016) || 0],
+               			label: country.name});	
+               		}
+
+               		if(country.name.toLowerCase() == "syrisch")
+               		{
+               			_lineChartDataSyrie.push({data:[
+               			country.values.get(1975) || 0,
+               			country.values.get(1976) || 0,
+               			country.values.get(1977) || 0,
+               			country.values.get(1978) || 0,
+               			country.values.get(1979) || 0,
+               			country.values.get(1980) || 0,
+               			country.values.get(1981) || 0,
+               			country.values.get(1982) || 0,
+               			country.values.get(1983) || 0,
+               			country.values.get(1984) || 0,
+               			country.values.get(1985) || 0,
+               			country.values.get(1986) || 0,
+               			country.values.get(1987) || 0,
+               			country.values.get(1988) || 0,
+               			country.values.get(1989) || 0,
+               			country.values.get(1990) || 0,
+               			country.values.get(1991) || 0,
+               			country.values.get(1992) || 0,
+               			country.values.get(1993) || 0,
+               			country.values.get(1994) || 0,
+               			country.values.get(1995) || 0,
+               			country.values.get(1996) || 0,
+               			country.values.get(1997) || 0,
+               			country.values.get(1998) || 0,
+               			country.values.get(1999) || 0,
+               			country.values.get(2000) || 0,
+               			country.values.get(2001) || 0,
+               			country.values.get(2002) || 0,
+               			country.values.get(2003) || 0,
+               			country.values.get(2004) || 0,
+               			country.values.get(2005) || 0,
+               			country.values.get(2006) || 0,
+               			country.values.get(2007) || 0,
+               			country.values.get(2008) || 0,
+               			country.values.get(2009) || 0,
+               			country.values.get(2010) || 0,
+               			country.values.get(2011) || 0,
+               			country.values.get(2012) || 0,
+               			country.values.get(2013) || 0,
+               			country.values.get(2014) || 0,
+               			country.values.get(2015) || 0,
+               			country.values.get(2016) || 0],
+               			label: country.name});	
+               		}
 
                		if(country.name.toLowerCase() == "pools")
                		{
@@ -490,6 +633,8 @@ buttonText = "Play";
                	this.lineChartData = _lineChartData;
                	this.lineChartDataAfghanistan = _lineChartDataAfghanistan;
                	this.lineChartDataPolen = _lineChartDataPolen;
+               	this.lineChartDataSyrie = _lineChartDataSyrie;
+               	this.lineChartDataEritrea = _lineChartDataEritrea;
                });
   }
  onSelect()
