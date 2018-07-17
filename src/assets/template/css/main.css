@@ -345,7 +345,7 @@ a:not([href]):not([tabindex]):hover {
   color: #4676fa;
 }
 .overlay-2 {
-  background: rgba(0, 0, 0, 0.7) !important;
+  background: rgba(0, 0, 0, 1) !important;
 }
 /* ==========================================================================
    About Section Style
@@ -678,7 +678,7 @@ a:not([href]):not([tabindex]):hover {
    Video promo Style
    ========================================================================== */
 .video-promo {
-  background: url(../img/vluchtelingen.jpg) fixed;
+  background: url(../img/alula.jpg) fixed;
   background-position: cover;
   position: relative;
 }
@@ -716,8 +716,8 @@ a:not([href]):not([tabindex]):hover {
   height: 100%;
   top: 0px;
   left: 0px;
-  background: red;
-  opacity: 0.7;
+  background: #615E3F ;
+  opacity: 0.8;
   filter: alpha(opacity=70);
 }
 /* ==========================================================================
@@ -777,7 +777,7 @@ a:not([href]):not([tabindex]):hover {
    Counter Section Style
    ========================================================================== */
 .counters {
-  background: url(../img/bg1.jpg) fixed;
+  background: url(../img/vluchtelingen.jpg) fixed;
   position: relative;
 }
 .counters .facts-item {

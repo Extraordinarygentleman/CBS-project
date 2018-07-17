@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {Http} from '@angular/http';
 //elk land heeft een naam en een map met waardes (key, values).
-//key is het jaar taal en value is de waarde van dit jaartal.
+//key is het jaartal en value is de waarde van dit jaartal.
 class Country {
 
     name: string;
@@ -30,16 +30,6 @@ console.log(event);
 
   }
 
-isPlaying = false;
-audio = new Audio();
-audio1= new Audio();
-audio2= new Audio();
-audio3= new Audio();
-buttonText = "Play";
-
-
-
-
   
   title = 'Vluchtelingen';
   countryArray: Array<Country> = [];
@@ -54,19 +44,8 @@ buttonText = "Play";
   {data: [], label: ''},
   {data: [], label: ''},
   {data: [], label: ''},
-  {data: [], label: ''},
-  {data: [], label: ''},
-  {data: [], label: ''},
-  {data: [], label: ''},
-  {data: [], label: ''},
-  {data: [], label: ''},
-  {data: [], label: ''},
-  {data: [], label: ''},
-  {data: [], label: ''},
-  {data: [], label: ''},
-  {data: [], label: ''}
   ];
-  public lineChartLabels:Array<any> = ['1975', '1976', '1977', '1978', '1979', '1980', '1981', '1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
+  public lineChartLabels:Array<any> = ['2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
   public lineChartOptions:any = {
     responsive: true
   };
@@ -233,7 +212,7 @@ buttonText = "Play";
   public lineChartDataAfghanistan:Array<any> = [
   {data: [], label: ''},];
 
-  public lineChartLabelsAfghanistan:Array<any> = ['1975', '1976', '1977', '1978', '1979', '1980', '1981', '1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
+  public lineChartLabelsAfghanistan:Array<any> = ['2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
   public lineChartOptionsAfghanistan:any = {
     responsive: true
   };
@@ -253,7 +232,7 @@ buttonText = "Play";
   public lineChartDataPolen:Array<any> = [
   {data: [], label: ''},];
 
-  public lineChartLabelsPolen:Array<any> = ['1975', '1976', '1977', '1978', '1979', '1980', '1981', '1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
+  public lineChartLabelsPolen:Array<any> = ['2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
   public lineChartOptionsPolen:any = {
     responsive: true
   };
@@ -274,7 +253,7 @@ buttonText = "Play";
     public lineChartDataSyrie:Array<any> = [
   {data: [], label: ''},];
 
-  public lineChartLabelsSyrie:Array<any> = ['1975', '1976', '1977', '1978', '1979', '1980', '1981', '1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
+  public lineChartLabelsSyrie:Array<any> = ['2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
   public lineChartOptionsSyrie:any = {
     responsive: true
   };
@@ -295,7 +274,7 @@ buttonText = "Play";
     public lineChartDataEritrea:Array<any> = [
   {data: [], label: ''},];
 
-  public lineChartLabelsEritrea:Array<any> = ['1975', '1976', '1977', '1978', '1979', '1980', '1981', '1982','1983','1984','1985','1986','1987','1988','1989','1990','1991','1992','1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
+  public lineChartLabelsEritrea:Array<any> = ['2006','2007','2008','2009','2010','2011','2012','2013','2014','2015','2016',];
   public lineChartOptionsEritrea:any = {
     responsive: true
   };
@@ -336,11 +315,7 @@ buttonText = "Play";
 
   			//lees json uit
           constructor(private http:Http) {
-          		this.audio.src = "../../../assets/template/video/Uitleg Polen.mp3";
-          		this.audio1.src = "../../../assets/template/video/UItleg Afghanistan.mp3";
-          		this.audio2.src = "../../../assets/template/video/Uitleg Syrie.mp3";
-          		this.audio3.src = "../../../assets/template/video/UitlegEritrea.mp3";
-                this.http.get('/assets/dataverzoek.json')
+                this.http.get('/assets/template/dataverzoek.json')
                 //leest async json uit
                .subscribe(res => {
                	this.jsonData = res.json()
@@ -397,37 +372,6 @@ buttonText = "Play";
                	if(country.name.toLowerCase() == "eritrees")
                		{
                			_lineChartDataEritrea.push({data:[
-               			country.values.get(1975) || 0,
-               			country.values.get(1976) || 0,
-               			country.values.get(1977) || 0,
-               			country.values.get(1978) || 0,
-               			country.values.get(1979) || 0,
-               			country.values.get(1980) || 0,
-               			country.values.get(1981) || 0,
-               			country.values.get(1982) || 0,
-               			country.values.get(1983) || 0,
-               			country.values.get(1984) || 0,
-               			country.values.get(1985) || 0,
-               			country.values.get(1986) || 0,
-               			country.values.get(1987) || 0,
-               			country.values.get(1988) || 0,
-               			country.values.get(1989) || 0,
-               			country.values.get(1990) || 0,
-               			country.values.get(1991) || 0,
-               			country.values.get(1992) || 0,
-               			country.values.get(1993) || 0,
-               			country.values.get(1994) || 0,
-               			country.values.get(1995) || 0,
-               			country.values.get(1996) || 0,
-               			country.values.get(1997) || 0,
-               			country.values.get(1998) || 0,
-               			country.values.get(1999) || 0,
-               			country.values.get(2000) || 0,
-               			country.values.get(2001) || 0,
-               			country.values.get(2002) || 0,
-               			country.values.get(2003) || 0,
-               			country.values.get(2004) || 0,
-               			country.values.get(2005) || 0,
                			country.values.get(2006) || 0,
                			country.values.get(2007) || 0,
                			country.values.get(2008) || 0,
@@ -445,37 +389,6 @@ buttonText = "Play";
                		if(country.name.toLowerCase() == "syrisch")
                		{
                			_lineChartDataSyrie.push({data:[
-               			country.values.get(1975) || 0,
-               			country.values.get(1976) || 0,
-               			country.values.get(1977) || 0,
-               			country.values.get(1978) || 0,
-               			country.values.get(1979) || 0,
-               			country.values.get(1980) || 0,
-               			country.values.get(1981) || 0,
-               			country.values.get(1982) || 0,
-               			country.values.get(1983) || 0,
-               			country.values.get(1984) || 0,
-               			country.values.get(1985) || 0,
-               			country.values.get(1986) || 0,
-               			country.values.get(1987) || 0,
-               			country.values.get(1988) || 0,
-               			country.values.get(1989) || 0,
-               			country.values.get(1990) || 0,
-               			country.values.get(1991) || 0,
-               			country.values.get(1992) || 0,
-               			country.values.get(1993) || 0,
-               			country.values.get(1994) || 0,
-               			country.values.get(1995) || 0,
-               			country.values.get(1996) || 0,
-               			country.values.get(1997) || 0,
-               			country.values.get(1998) || 0,
-               			country.values.get(1999) || 0,
-               			country.values.get(2000) || 0,
-               			country.values.get(2001) || 0,
-               			country.values.get(2002) || 0,
-               			country.values.get(2003) || 0,
-               			country.values.get(2004) || 0,
-               			country.values.get(2005) || 0,
                			country.values.get(2006) || 0,
                			country.values.get(2007) || 0,
                			country.values.get(2008) || 0,
@@ -493,37 +406,6 @@ buttonText = "Play";
                		if(country.name.toLowerCase() == "pools")
                		{
                			_lineChartDataPolen.push({data:[
-               			country.values.get(1975) || 0,
-               			country.values.get(1976) || 0,
-               			country.values.get(1977) || 0,
-               			country.values.get(1978) || 0,
-               			country.values.get(1979) || 0,
-               			country.values.get(1980) || 0,
-               			country.values.get(1981) || 0,
-               			country.values.get(1982) || 0,
-               			country.values.get(1983) || 0,
-               			country.values.get(1984) || 0,
-               			country.values.get(1985) || 0,
-               			country.values.get(1986) || 0,
-               			country.values.get(1987) || 0,
-               			country.values.get(1988) || 0,
-               			country.values.get(1989) || 0,
-               			country.values.get(1990) || 0,
-               			country.values.get(1991) || 0,
-               			country.values.get(1992) || 0,
-               			country.values.get(1993) || 0,
-               			country.values.get(1994) || 0,
-               			country.values.get(1995) || 0,
-               			country.values.get(1996) || 0,
-               			country.values.get(1997) || 0,
-               			country.values.get(1998) || 0,
-               			country.values.get(1999) || 0,
-               			country.values.get(2000) || 0,
-               			country.values.get(2001) || 0,
-               			country.values.get(2002) || 0,
-               			country.values.get(2003) || 0,
-               			country.values.get(2004) || 0,
-               			country.values.get(2005) || 0,
                			country.values.get(2006) || 0,
                			country.values.get(2007) || 0,
                			country.values.get(2008) || 0,
@@ -540,37 +422,6 @@ buttonText = "Play";
                		if(country.name.toLowerCase() == "afghaans")
                		{
                			_lineChartDataAfghanistan.push({data:[
-               			country.values.get(1975) || 0,
-               			country.values.get(1976) || 0,
-               			country.values.get(1977) || 0,
-               			country.values.get(1978) || 0,
-               			country.values.get(1979) || 0,
-               			country.values.get(1980) || 0,
-               			country.values.get(1981) || 0,
-               			country.values.get(1982) || 0,
-               			country.values.get(1983) || 0,
-               			country.values.get(1984) || 0,
-               			country.values.get(1985) || 0,
-               			country.values.get(1986) || 0,
-               			country.values.get(1987) || 0,
-               			country.values.get(1988) || 0,
-               			country.values.get(1989) || 0,
-               			country.values.get(1990) || 0,
-               			country.values.get(1991) || 0,
-               			country.values.get(1992) || 0,
-               			country.values.get(1993) || 0,
-               			country.values.get(1994) || 0,
-               			country.values.get(1995) || 0,
-               			country.values.get(1996) || 0,
-               			country.values.get(1997) || 0,
-               			country.values.get(1998) || 0,
-               			country.values.get(1999) || 0,
-               			country.values.get(2000) || 0,
-               			country.values.get(2001) || 0,
-               			country.values.get(2002) || 0,
-               			country.values.get(2003) || 0,
-               			country.values.get(2004) || 0,
-               			country.values.get(2005) || 0,
                			country.values.get(2006) || 0,
                			country.values.get(2007) || 0,
                			country.values.get(2008) || 0,
@@ -585,37 +436,6 @@ buttonText = "Play";
                			label: country.name});	
                		}
                		_lineChartData.push({data:[
-               			country.values.get(1975) || 0,
-               			country.values.get(1976) || 0,
-               			country.values.get(1977) || 0,
-               			country.values.get(1978) || 0,
-               			country.values.get(1979) || 0,
-               			country.values.get(1980) || 0,
-               			country.values.get(1981) || 0,
-               			country.values.get(1982) || 0,
-               			country.values.get(1983) || 0,
-               			country.values.get(1984) || 0,
-               			country.values.get(1985) || 0,
-               			country.values.get(1986) || 0,
-               			country.values.get(1987) || 0,
-               			country.values.get(1988) || 0,
-               			country.values.get(1989) || 0,
-               			country.values.get(1990) || 0,
-               			country.values.get(1991) || 0,
-               			country.values.get(1992) || 0,
-               			country.values.get(1993) || 0,
-               			country.values.get(1994) || 0,
-               			country.values.get(1995) || 0,
-               			country.values.get(1996) || 0,
-               			country.values.get(1997) || 0,
-               			country.values.get(1998) || 0,
-               			country.values.get(1999) || 0,
-               			country.values.get(2000) || 0,
-               			country.values.get(2001) || 0,
-               			country.values.get(2002) || 0,
-               			country.values.get(2003) || 0,
-               			country.values.get(2004) || 0,
-               			country.values.get(2005) || 0,
                			country.values.get(2006) || 0,
                			country.values.get(2007) || 0,
                			country.values.get(2008) || 0,
@@ -632,95 +452,8 @@ buttonText = "Play";
 
                	this.lineChartData = _lineChartData;
                	this.lineChartDataAfghanistan = _lineChartDataAfghanistan;
-               	this.lineChartDataPolen = _lineChartDataPolen;
                	this.lineChartDataSyrie = _lineChartDataSyrie;
                	this.lineChartDataEritrea = _lineChartDataEritrea;
                });
   }
- onSelect()
- {
- 	console.log("olaaaskidee");
- 	this.playAudio();
- 	this.playAudio1();
- 	this.playAudio2();
- 	this.playAudio3();
- }
-
- playAudio()
-  { 
-	if(!this.isPlaying)
-	{  	
-		this.audio.load();
-		this.audio.play();
-		this.audio.volume = 1;
-		this.isPlaying = true;
-		console.log("playing musiccc jaming");
-		this.buttonText = "Stop";
-	}
-	else
-	{
-		this.audio.pause();
-		this.isPlaying = false;
-		console.log("why did you make me stop T_T");
-		this.buttonText = "Play";
-	}
-}
- playAudio1()
-  { 
-	if(!this.isPlaying)
-	{  	
-		this.audio1.load();
-		this.audio1.play();
-		this.audio1.volume = 1;
-		this.isPlaying = true;
-		console.log("playing musiccc jaming");
-		this.buttonText = "Stop";
-	}
-	else
-	{
-		this.audio1.pause();
-		this.isPlaying = false;
-		console.log("why did you make me stop T_T");
-		this.buttonText = "Play";
-	}
-}
-
- playAudio2()
-  { 
-	if(!this.isPlaying)
-	{  	
-		this.audio2.load();
-		this.audio2.play();
-		this.audio2.volume = 1;
-		this.isPlaying = true;
-		console.log("playing musiccc jaming");
-		this.buttonText = "Stop";
-	}
-	else
-	{
-		this.audio2.pause();
-		this.isPlaying = false;
-		console.log("why did you make me stop T_T");
-		this.buttonText = "Play";
-	}
-}
- playAudio3()
-  { 
-	if(!this.isPlaying)
-	{  	
-		this.audio3.load();
-		this.audio3.play();
-		this.audio3.volume = 1;
-		this.isPlaying = true;
-		console.log("playing musiccc jaming");
-		this.buttonText = "Stop";
-	}
-	else
-	{
-		this.audio3.pause();
-		this.isPlaying = false;
-		console.log("why did you make me stop T_T");
-		this.buttonText = "Play";
-	}
-}
 }
